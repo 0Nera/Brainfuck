@@ -20,17 +20,18 @@ int main() {
             case '+': strncat(output_file,"arr[i]++;",MAX_LEN);pars++;
             case '-': strncat(output_file,"arr[i]--;",MAX_LEN);pars++;
             case '.': strncat(output_file,"putchar(arr[i]);",MAX_LEN);pars++;
-            case ',': strncat(output_file,"arr[i] = getchar();",MAX_LEN)pars++;
-            case '[': strncat(output_file,"while(arr[i]){",MAX_LEN)
-            case ']': strncat(output_file,"}",MAX_LEN) 
+            case ',': strncat(output_file,"arr[i] = getchar();",MAX_LEN); pars++;
+            case '[': strncat(output_file,"while(arr[i]){",MAX_LEN); pars++;
+            case ']': strncat(output_file,"}",MAX_LEN); pars++;
             default: pars++;
 
         }
 
     }
+    printf("%s",output_file);
     FILE *fin;
-    fin = fopen("output.c", "r");
-    fprintf (fin,output_file);
+    fin = fopen("output.c", "w");
+    fprintf (fin, "%s",output_file);
     fclose(fin);
     return pars;
 
